@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAPD - Sunset Dreams</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Startseite</a></li>
+                <li><a href="#about">Über uns</a></li>
+                <li><a href="#services">Dienstleistungen</a></li>
+                <li><a href="#career">Karriere</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Willkommen beim LAPD - Sunset Dreams</h1>
+        <p>Schützen und Dienen auf den Straßen von Sunset Dreams</p>
+    </section>
+
+    <section class="slider">
+        <div class="slides">
+            <div class="slide"><img src="images/slide1.jpg" alt=""></div>
+            <div class="slide"><img src="images/slide2.jpg" alt=""></div>
+            <div class="slide"><img src="images/slide3.jpg" alt=""></div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2>Über uns</h2>
+        <p>Das Los Angeles Police Department auf dem FiveM Server Sunset Dreams ist für die Sicherheit und den Schutz der Bürger verantwortlich. Unser Team besteht aus engagierten Offizieren, die Tag und Nacht im Einsatz sind.</p>
+    </section>
+
+    <section class="services" id="services">
+        <h2>Dienstleistungen</h2>
+        <div class="service-item">
+            <h3>Polizeiaktionen</h3>
+            <p>Wir führen regelmäßig Einsätze durch, um die Sicherheit in der Stadt zu gewährleisten.</p>
+        </div>
+        <div class="service-item">
+            <h3>Community-Programme</h3>
+            <p>Unsere Programme zielen darauf ab, das Vertrauen und die Zusammenarbeit zwischen der Polizei und der Gemeinschaft zu stärken.</p>
+        </div>
+        <div class="service-item">
+            <h3>Kontaktinformationen</h3>
+            <p>Erfahren Sie, wie Sie uns erreichen können, wenn Sie Hilfe benötigen.</p>
+        </div>
+    </section>
+
+    <section class="career" id="career">
+        <h2>Karriere</h2>
+        <p>Interessiert an einer Karriere beim LAPD? Wir bieten spannende Möglichkeiten und ein engagiertes Team.</p>
+        <div class="job-opening">
+            <h3>Offene Stellen</h3>
+            <p>Erfahren Sie mehr über unsere aktuellen Stellenangebote und wie Sie sich bewerben können.</p>
+        </div>
+        <div class="benefits">
+            <h3>Vorteile</h3>
+            <p>Erfahren Sie mehr über die Vorteile einer Karriere bei uns.</p>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Kontakt</h2>
+        <form action="https://formspree.io/f/{your_form_id}" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Nachricht:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Absenden</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sunset Dreams in cooperation with <a href="https://discord.gg/cGPJYmrkbc" target="_blank" id="nkhd-link">NKHD Development</a></p>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.transform = `translateX(${100 * (i - index)}%)`;
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
+        }
+
+        setInterval(nextSlide, 3000);
+        showSlide(currentIndex);
+    </script>
+</body>
+</html>
